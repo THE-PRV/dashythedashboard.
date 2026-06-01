@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Access Review · Broadridge BPO T+1</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  /* ── shadcn-meets-enterprise tokens ────────────────────────────────── */
+  :root {
+    --mono: "Geist Mono", ui-monospace, "JetBrains Mono", Menlo, monospace;
+    --accent: #2563eb;
+    --accent-fg: #fff;
+
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --surface-2: #f4f4f5;
+    --border: #e4e4e7;
+    --border-subtle: #ececef;
+    --text: #09090b;
+    --text-muted: #71717a;
+
+    --warning-bg: #fef3c7;
+    --warning-border: #fde68a;
+    --warning-fg: #92400e;
+    --danger-fg: #b91c1c;
+
+    --badge-primary-fg: #1e40af;
+    --badge-primary-bg: #dbeafe;
+    --badge-primary-dot: #2563eb;
+    --badge-secondary-fg: #52525b;
+    --badge-secondary-bg: #f4f4f5;
+    --badge-secondary-dot: #a1a1aa;
+    --badge-used-fg: #166534;
+    --badge-used-bg: #dcfce7;
+    --badge-used-dot: #16a34a;
+    --badge-notused-fg: #9a3412;
+    --badge-notused-bg: #ffedd5;
+    --badge-notused-dot: #ea580c;
+    --badge-pending-fg: #854d0e;
+    --badge-pending-bg: #fef9c3;
+    --badge-pending-dot: #ca8a04;
+
+    --toggle-used-bg: #dcfce7;
+    --toggle-used-fg: #166534;
+    --toggle-notused-bg: #ffedd5;
+    --toggle-notused-fg: #9a3412;
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #09090b;
+    --surface: #18181b;
+    --surface-2: #27272a;
+    --border: #2e2e33;
+    --border-subtle: #232327;
+    --text: #fafafa;
+    --text-muted: #a1a1aa;
+
+    --warning-bg: #422006;
+    --warning-border: #713f12;
+    --warning-fg: #fcd34d;
+    --danger-fg: #f87171;
+
+    --badge-primary-fg: #93c5fd;
+    --badge-primary-bg: rgba(37,99,235,.18);
+    --badge-primary-dot: #60a5fa;
+    --badge-secondary-fg: #a1a1aa;
+    --badge-secondary-bg: rgba(255,255,255,.06);
+    --badge-secondary-dot: #71717a;
+    --badge-used-fg: #86efac;
+    --badge-used-bg: rgba(22,163,74,.18);
+    --badge-used-dot: #4ade80;
+    --badge-notused-fg: #fdba74;
+    --badge-notused-bg: rgba(234,88,12,.18);
+    --badge-notused-dot: #fb923c;
+    --badge-pending-fg: #fcd34d;
+    --badge-pending-bg: rgba(202,138,4,.18);
+    --badge-pending-dot: #facc15;
+
+    --toggle-used-bg: rgba(22,163,74,.22);
+    --toggle-used-fg: #86efac;
+    --toggle-notused-bg: rgba(234,88,12,.22);
+    --toggle-notused-fg: #fdba74;
+  }
+
+  html, body, #root { height: 100%; margin: 0; }
+  body {
+    font-family: "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    color: var(--text);
+    background: var(--bg);
+  }
+  * { box-sizing: border-box; }
+  ::selection { background: color-mix(in oklab, var(--accent), transparent 70%); }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<template id="__bundler_thumbnail" data-bg-color="#fafafa">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#fafafa"/>
+    <rect x="60" y="60" width="1080" height="56" rx="10" fill="#ffffff" stroke="#e4e4e7"/>
+    <rect x="84" y="80" width="120" height="16" rx="4" fill="#2563eb"/>
+    <g fill="#ffffff" stroke="#e4e4e7">
+      <rect x="60"  y="148" width="525" height="180" rx="12"/>
+      <rect x="615" y="148" width="525" height="180" rx="12"/>
+    </g>
+    <circle cx="170" cy="240" r="50" fill="none" stroke="#2563eb" stroke-width="14"/>
+    <circle cx="170" cy="240" r="50" fill="none" stroke="#16a34a" stroke-width="14" stroke-dasharray="180 314"/>
+    <rect x="240" y="200" width="280" height="14" rx="3" fill="#09090b"/>
+    <rect x="240" y="226" width="220" height="10" rx="3" fill="#a1a1aa"/>
+    <g fill="#dcfce7"><rect x="240" y="248" width="40" height="18" rx="9"/></g>
+    <g fill="#ffedd5"><rect x="288" y="248" width="56" height="18" rx="9"/></g>
+    <g fill="#dbeafe"><rect x="352" y="248" width="46" height="18" rx="9"/></g>
+    <rect x="60"  y="360" width="1080" height="380" rx="12" fill="#ffffff" stroke="#e4e4e7"/>
+    <g>
+      <rect x="80" y="396" width="6" height="32" fill="#2563eb"/>
+      <rect x="80" y="452" width="6" height="32" fill="#0891b2"/>
+      <rect x="80" y="508" width="6" height="32" fill="#7c3aed"/>
+      <rect x="80" y="564" width="6" height="32" fill="#ca8a04"/>
+      <rect x="80" y="620" width="6" height="32" fill="#db2777"/>
+      <rect x="80" y="676" width="6" height="32" fill="#0d9488"/>
+    </g>
+  </svg>
+</template>
+
+<!-- React + Babel (pinned) -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<!-- Data + shared atoms + the two screens + main app -->
+<script type="text/babel" src="data.jsx"></script>
+<script type="text/babel" src="ui.jsx"></script>
+<script type="text/babel" src="CardDashboard.jsx"></script>
+<script type="text/babel" src="ManagerDashboard.jsx"></script>
+<script type="text/babel" src="prototype.jsx"></script>
+</body>
+</html>
